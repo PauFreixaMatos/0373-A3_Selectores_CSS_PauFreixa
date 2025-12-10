@@ -5,56 +5,195 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Selectors</title>
-</head>
+    <title>Selectores CSS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/TU_KIT_DE_FONT_AWESOME.js" crossorigin="anonymous"></script> 
+    
+    <style>
+        /* REGLA 1. Utilizar el selector universal * para cambiar el tipo de fuente del documento */
+        * {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* REGLA 2. El elemento body tendrá margen 0 y relleno de 20% únicamente a la derecha e izquierda */
+        body {
+            margin: 0;
+            padding: 0 20%;
+        }
+
+        /* REGLA 3. Los elementos h1 estarán subrayados, de color darkcyan y centrados */
+        h1 {
+            text-decoration: underline;
+            color: darkcyan;
+            text-align: center;
+        }
+
+        /* REGLA 4. Los elementos con clase selector tendrán color lightcyan */
+        .selector {
+            color: lightcyan;
+        }
+
+        /* REGLA 5. Los elementos con clase selectors tendrán relleno de 5%, borde darkcyan y esquinas redondeadas */
+        .selectors {
+            padding: 5%;
+            border: solid darkcyan 1px;
+            border-radius: 5px;
+        }
+
+        /* REGLA 6. Los elementos con id universal tendrán color lightgoldenrodyellow */
+        #universal {
+            color: lightgoldenrodyellow;
+        }
+
+        /* REGLA 7. Los h2 con clase selector o id universal tendrán fondo darkcyan, relleno y bordes redondeados */
+        h2.selector, h2#universal {
+            background-color: darkcyan;
+            padding: 1%;
+            border-radius: 5px;
+        }
+
+        /* REGLA 8. Los span tendrán font-weight:900, fondo negro y texto blanco */
+        span {
+            font-weight: 900;
+            background-color: black;
+            color: white;
+        /* ADICIONES para espaciar el texto sin eliminar la regla 8 */
+            padding: 2px 4px;
+            display: inline-block;
+        }
+
+        /* REGLA 9. Los a hijos directos de un li no tendrán subrayado */
+        li > a {
+            text-decoration: none;
+        }
+
+        /* REGLA 10. Los h3 tendrán fondo con transparencia, relleno y bordes redondeados */
+        h3 {
+            background-color: rgba(0, 139, 139, 0.529);
+            padding: 0.5px;
+            border-radius: 5px;
+        }
+
+        /* REGLA 11. Los div dentro del elemento con id gallery tendrán ancho 100% */
+        #gallery div {
+            width: 100%;
+        }
+
+        /* REGLA 12. Las imágenes tendrán ancho 100%, borde y esquinas redondeadas */
+        img {
+            width: 100%;
+            border: solid darkcyan 1px;
+            border-radius: 5px;
+        }
+    </style>
+    </head>
 
 <body>
-    <h1>CSS Selectors</h1>
-    <p>A CSS selector selects the HTML element(s) you want to style.</p>
+    <h1><i class="fas fa-search"></i> Selectores CSS</h1>
+    <p>Un selector CSS selecciona los elementos HTML que quieres estilizar.</p>
+
     <div class="selectors">
-        <h2>CSS Selectors</h2>
-        <p>CSS selectors are used to "find" (or select) the HTML elements you want to style.</p>
-        <p>We can divide CSS selectors into five categories:</p>
+        <h2>Selectores CSS</h2>
+        <p>Los selectores CSS se usan para "encontrar" (o seleccionar) los elementos HTML que quieres aplicar estilo.</p>
+        <p>Podemos dividir los selectores CSS en cinco categorías:</p>
+
         <ul>
-            <li>Simple selectors (select elements based on name, id, class)</li>
-            <li>Combinator selectors (select elements based on a specific relationship between them)</li>
-            <li>Pseudo-class selectors (select elements based on a certain state)
-            </li>
-            <li>Pseudo-elements selectors (select and style a part of an element)</li>
-            <li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+            <li>Selectores simples (seleccionan por nombre, id o clase)</li>
+            <li><a href="https://www.w3schools.com/css/css_combinators.asp">Selectores combinadores (según relación entre elementos)</a></li>
+            <li><a href="https://www.w3schools.com/css/css_pseudo_classes.asp">Selectores de pseudo-clase (según un estado concreto)</a></li>
+            <li><a href="https://www.w3schools.com/css/css_pseudo_elements.asp">Selectores de pseudo-elementos (estilizan una parte del elemento)</a></li>
+            <li><a href="https://www.w3schools.com/css/css_attribute_selectors.asp">Selectores de atributo (por atributo o valor del atributo)</a></li>
         </ul>
     </div>
-    <hr>
-    <h2 class="selector">The CSS <span>element</span> Selector</h2>
-    <p>The element selector selects HTML elements based on the element <span>name</span> (body, p, h1, h5, a, div, etc.).</p>
-    <hr>
-    <h2 class="selector">The CSS <span>id</span> Selector</h2>
-    <p>The id selector uses the id attribute of an HTML element to select a specific element.</p>
-    <p>The id of an element is unique within a page, so the id selector is used to select one unique element!</p>
-    <p>To select an element with a specific id, write a hash <span>(#)</span> character, followed by the id of the element.</p>
-    <hr>
-    <h2 class="selector">The CSS <span>class</span> Selector</h2>
-    <p>The class selector selects HTML elements with a specific class attribute.</p>
-    <p>To select elements with a specific class, write a period <span>(.)</span> character, followed by the class name.</p>
+
     <hr>
 
-    <h2 id="universal">The CSS <span>Universal</span> Selector</h2>
-    <p>The universal selector <span>(*)</span> selects all HTML elements on the page.</p>
+    <h2 class="selector">El Selector de <span class="selectors">elemento</span> en CSS</h2>
+    <p>El selector de elemento selecciona elementos HTML basándose en el <span>nombre</span> del elemento (body, p, h1, h5, a, div, etc.).</p>
+
+    <hr>
+
+    <h2 class="selector">El Selector de <span class="selectors">id</span> en CSS</h2>
+    <p>El selector id usa el atributo id de un elemento HTML para seleccionar un elemento específico.</p>
+    <p>El id de un elemento es único en la página, así que se usa para seleccionar un único elemento.</p>
+    <p>Para seleccionar un elemento con un id concreto, escribe el carácter almohadilla <span>(#)</span> seguido del id del elemento.</p>
+
+    <hr>
+
+    <h2 class="selector">El Selector de <span class="selectors">clase</span> en CSS</h2>
+    <p>El selector de clase selecciona elementos HTML que tengan un atributo class específico.</p>
+    <p>Para seleccionar elementos con una clase concreta, escribe un punto <span>(.)</span> seguido del nombre de la clase.</p>
+
+    <hr>
+
+    <h2 id="universal">El Selector <span class="selectors">Universal</span> en CSS</h2>
+    <p>El selector universal <span>(*)</span> selecciona todos los elementos HTML de la página.</p>
 
     <div>
-        <p>Use our <a href="https://www.w3schools.com/cssref/trysel.asp" target="_blank">CSS Selector Tester</a> to demonstrate the different selectors. </p>
+        <p>Usa nuestro <a href="https://www.w3schools.com/cssref/trysel.asp" target="_blank">Probador de Selectores CSS</a> para probar los diferentes selectores.</p>
     </div>
+
     <hr>
 
     <div id="gallery">
         <div>
-            <h3>CSS Syntax</h3>
+            <h3>Sintaxis CSS</h3>
             <img src="./resources/regla_css.jpg" alt="">
         </div>
         <div>
-            <h3>All CSS Simple Selectors</h3>
+            <h3>Todos los Selectores Simples de CSS</h3>
             <img src="./resources/selectors.png" alt="">
         </div>
+
+        <div>
+            <h3>Tabla de Selectores Simples</h3>
+            <table style="width:100%; border-collapse: collapse; border: 1px solid darkcyan; margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid darkcyan; padding: 8px;">Selector</th>
+                        <th style="border: 1px solid darkcyan; padding: 8px;">Ejemplo</th>
+                        <th style="border: 1px solid darkcyan; padding: 8px;">Descripción del ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">\#id</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">\#firstname</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">Selecciona el elemento con id="firstname"</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">.class</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">.intro</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">Selecciona todos los elementos con class="intro"</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">element.class</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">p.intro</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">Selecciona solo los elementos &lt;p&gt; con class="intro"</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">\*</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">\*</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">Selecciona todos los elementos</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">element</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">p</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">Selecciona todos los elementos &lt;p&gt;</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">element, element,..</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">div, p</td>
+                        <td style="border: 1px solid darkcyan; padding: 8px;">Selecciona todos los &lt;div&gt; y todos los &lt;p&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
 </body>
